@@ -14,6 +14,7 @@ document.querySelectorAll(".colorArea .color").forEach((item) => {
 screen.addEventListener("mousedown", mouseDownEvent);
 screen.addEventListener("mousemove", mouseMoveEvent);
 screen.addEventListener("mouseup", mouseUpEvent);
+document.querySelector(".clear").addEventListener("click", clearScreen);
 
 // Functions
 function colorClickEvent(event) {
@@ -55,4 +56,9 @@ function draw(x, y) {
 
   mouseX = pointX;
   mouseY = pointY;
+}
+
+function clearScreen() {
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
